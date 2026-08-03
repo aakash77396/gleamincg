@@ -1,9 +1,13 @@
+import Navbar from "../components/Navbar";
+import Hero from "../sections/Hero";
+import About from "../pages/About";
+
 const Home = () => {
   return (
     <>
-      <h1 className="text-5xl text-center mt-20">
-        GLEAMINCG Interior Designing
-      </h1>
+      <Navbar />
+      <Hero />
+      <About />
     </>
   );
 };
