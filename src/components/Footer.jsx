@@ -106,7 +106,7 @@ const Footer = () => {
 
                 <FaMapMarkerAlt className="text-[#C9A35D]" />
 
-                <span>Patna, Bihar</span>
+                <span>Noida, UP</span>
 
               </div>
 
