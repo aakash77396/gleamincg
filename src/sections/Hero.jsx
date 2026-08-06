@@ -10,7 +10,7 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="relative min-h-screen flex items-center overflow-hidden"
+            className="relative min-h-screen mt-15 flex items-center overflow-hidden"
         >
             {/* Background Image */}
             <img
