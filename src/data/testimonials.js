@@ -5,7 +5,7 @@ export const testimonials = [
 
         name: "Amit Kumar",
 
-        location: "Patna",
+        location: "Noida",
 
         rating: 5,
 
