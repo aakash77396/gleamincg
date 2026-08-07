@@ -40,4 +40,12 @@ export const projects = [
 
     url: "https://www.youtube.com/embed/ysz5S6PUM-U",
   },
+  {
+    id: 5,
+    type: "image",
+    title: "Luxury Living Room",
+    category: "Living Room",
+    description: "Modern luxury interior with elegant lighting.",
+    url: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800",
+  },
 ];
