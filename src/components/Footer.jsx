@@ -90,7 +90,7 @@ const Footer = () => {
 
                 <FaPhoneAlt className="text-[#C9A35D]" />
 
-                <span>+91 9876543210</span>
+                <span>+91 9625586977</span>
 
               </div>
 
@@ -98,7 +98,7 @@ const Footer = () => {
 
                 <FaEnvelope className="text-[#C9A35D]" />
 
-                <span>hello@gleamincg.in</span>
+                <span>gleamincginteriordesign@gmail.com</span>
 
               </div>
 
