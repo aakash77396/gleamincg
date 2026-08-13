@@ -135,11 +135,23 @@ const Footer = () => {
 
         </div>
 
-        <div className="border-t border-zinc-800 py-6 text-center text-gray-500">
+        <div className="border-t border-zinc-800 py-6 text-center text-gray-500 text-sm">
+          <p>
+            © {new Date().getFullYear()} AMAZING SOLUTION & DECORATION Interior Designing.
+            All Rights Reserved.
+          </p>
 
-          © {new Date().getFullYear()} AMAZING SOLUTION & DECORATION Interior Designing.
-          All Rights Reserved.
-
+          <p className="mt-2">
+            Designed & Developed by{" "}
+            <a
+              href="https://www.instagram.com/_imsky_._/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#C9A35D] hover:underline"
+            >
+              Aakash Kumar
+            </a>
+          </p>
         </div>
 
       </Container>
