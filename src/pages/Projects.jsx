@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { projects } from "../data/projects";
 import ProjectCard from "../components/common/ProjectCard";
 import Container from "../components/common/Container";
 
 const Projects = () => {
-
+ const navigate = useNavigate();
   const [filter, setFilter] = useState("all");
 
   const filteredProjects =
@@ -14,12 +15,20 @@ const Projects = () => {
       : projects.filter((item) => item.type === filter);
 
   return (
-    <section className="py-24 bg-[#0D0D0D] min-h-screen">
+    <section className="py-10 bg-[#0D0D0D] min-h-screen">
+      <div
+            onClick={() => navigate("/")}
+            className="cursor-pointer text-black mx-3  bg-amber-300 px-4 py-3 mb-5 rounded-lg font-medium transition-all duration-200 hover:opacity-80"
+            
+          >
+            Home
+          </div>
 
       <Container>
 
         <div className="text-center">
 
+          
           <p className="uppercase tracking-[5px] text-[#C9A35D]">
             Portfolio
           </p>
@@ -41,33 +50,30 @@ const Projects = () => {
 
           <button
             onClick={() => setFilter("all")}
-            className={`px-6 py-3 rounded-full ${
-              filter === "all"
+            className={`px-6 py-3 rounded-full ${filter === "all"
                 ? "bg-[#C9A35D] text-black"
                 : "bg-[#1A1A1A]"
-            }`}
+              }`}
           >
             All
           </button>
 
           <button
             onClick={() => setFilter("image")}
-            className={`px-6 py-3 rounded-full ${
-              filter === "image"
+            className={`px-6 py-3 rounded-full ${filter === "image"
                 ? "bg-[#C9A35D] text-black"
                 : "bg-[#1A1A1A]"
-            }`}
+              }`}
           >
             Images
           </button>
 
           <button
             onClick={() => setFilter("video")}
-            className={`px-6 py-3 rounded-full ${
-              filter === "video"
+            className={`px-6 py-3 rounded-full ${filter === "video"
                 ? "bg-[#C9A35D] text-black"
                 : "bg-[#1A1A1A]"
-            }`}
+              }`}
           >
             Videos
           </button>
