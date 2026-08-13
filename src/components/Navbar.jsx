@@ -48,9 +48,12 @@ const Navbar = () => {
 
                     {/* Logo */}
 
-                    <h2 className="text-2xl font-bold tracking-widest text-[#C9A35D]">
-                        GLEAMINCG
-                    </h2>
+                    <h1 className="flex flex-wrap items-center gap-x-1 text-xl md:text-2xl font-semibold tracking-[0.15em]">
+                        <span className="text-white">AMAZING</span>
+                        <span className="text-[#C9A35D]">SOLUTION</span>
+                        <span className="text-[#C9A35D]">&</span>
+                        <span className="text-[#C9A35D]">DECORATION</span>
+                    </h1>
 
                     {/* Desktop */}
 

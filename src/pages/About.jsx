@@ -82,7 +82,7 @@ const About = () => {
             </h2>
 
             <p className="text-gray-400 mt-8 leading-8">
-              GLEAMINCG specializes in creating luxurious,
+              AMAZING SOLUTION & DECORATION specializes in creating luxurious,
               elegant, and functional interiors for homes,
               offices, and commercial spaces. Our team
               combines creativity with craftsmanship to

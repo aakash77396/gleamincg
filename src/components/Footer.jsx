@@ -21,9 +21,12 @@ const Footer = () => {
 
           <div>
 
-            <h2 className="text-3xl font-bold text-[#C9A35D]">
-              GLEAMINCG
-            </h2>
+            <h3 className="flex flex-wrap items-center gap-x-1 text-xl md:text-2xl font-semibold tracking-[0.15em]">
+              <span className="text-white">AMAZING</span>
+              <span className="text-[#C9A35D]">SOLUTION</span>
+              <span className="text-[#C9A35D]">&</span>
+              <span className="text-[#C9A35D]">DECORATION</span>
+            </h3>
 
             <p className="mt-5 text-gray-400 leading-8">
               Creating luxurious and functional interior
@@ -94,12 +97,12 @@ const Footer = () => {
 
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex flex-nowrap items-center gap-2">
+                <FaEnvelope className="shrink-0 text-[#C9A35D]" />
 
-                <FaEnvelope className="text-[#C9A35D]" />
-
-                <span>gleamincginteriordesign@gmail.com</span>
-
+                <span className="text-xs sm:text-sm whitespace-nowrap">
+                  gleamincginteriordesign@gmail.com
+                </span>
               </div>
 
               <div className="flex gap-3">
@@ -134,7 +137,7 @@ const Footer = () => {
 
         <div className="border-t border-zinc-800 py-6 text-center text-gray-500">
 
-          © {new Date().getFullYear()} GLEAMINCG Interior Designing.
+          © {new Date().getFullYear()} AMAZING SOLUTION & DECORATION Interior Designing.
           All Rights Reserved.
 
         </div>

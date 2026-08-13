@@ -6,7 +6,7 @@ export const testimonials = [
         location: "Noida",
         rating: 5,
         review:
-            "Gleamincg completely transformed our home into a luxurious and comfortable living space."
+            "AMAZING SOLUTION & DECORATION completely transformed our home into a luxurious and comfortable living space."
     },
 
     {
