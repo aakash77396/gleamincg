@@ -33,9 +33,19 @@ const Footer = () => {
               spaces that reflect your lifestyle.
             </p>
 
+<div className="text-center mt-8 pt-5 border-t border-[#2A2A2A]">
+  <a
+    href="/admin/login"
+    className="text-xs text-gray-600 hover:text-[#C9A35D] transition"
+  >
+    Admin Login
+  </a>
+</div>
           </div>
 
           {/* Quick Links */}
+
+          
 
           <div>
 
@@ -54,6 +64,7 @@ const Footer = () => {
               <li><a href="#contact">Contact</a></li>
 
             </ul>
+            
 
           </div>
 
@@ -105,12 +116,41 @@ const Footer = () => {
                 </span>
               </div>
 
+              {/*  Company address */}
               <div className="flex gap-3">
-
                 <FaMapMarkerAlt className="text-[#C9A35D]" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Noida+Greater+Noida"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Noida / Greater Noida — 9625586977
+                </a>
+              </div>
 
-                <span>Noida, UP</span>
+              <div className="flex gap-3">
+                <FaMapMarkerAlt className="text-[#C9A35D]" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Gurgaon+Gurugram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Gurgaon / Gurugram — 9625586977
+                </a>
+              </div>
 
+              <div className="flex gap-3">
+                <FaMapMarkerAlt className="text-[#C9A35D]" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Ghaziabad+Faridabad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Ghaziabad / Faridabad — 9625586977
+                </a>
               </div>
 
             </div>
