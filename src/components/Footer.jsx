@@ -33,19 +33,19 @@ const Footer = () => {
               spaces that reflect your lifestyle.
             </p>
 
-<div className="text-center mt-8 pt-5 border-t border-[#2A2A2A]">
-  <a
-    href="/admin/login"
-    className="text-xs text-gray-600 hover:text-[#C9A35D] transition"
-  >
-    Admin Login
-  </a>
-</div>
+            <div className="text-center mt-8 pt-5 border-t border-[#2A2A2A]">
+              <a
+                href="/admin/login"
+                className="text-xs text-gray-600 hover:text-[#C9A35D] transition"
+              >
+                Admin Login
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
 
-          
+
 
           <div>
 
@@ -64,7 +64,7 @@ const Footer = () => {
               <li><a href="#contact">Contact</a></li>
 
             </ul>
-            
+
 
           </div>
 

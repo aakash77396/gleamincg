@@ -49,7 +49,7 @@ const Navbar = () => {
 
                     {/* Logo */}
 
-                    <h1 className="flex flex-wrap items-center gap-x-1 text-xl md:text-2xl font-semibold tracking-[0.15em]">
+                    <h1 className="flex -ml-15.5 flex-wrap items-center gap-x-1 text-xl md:text-2xl font-semibold tracking-[0.15em]">
                         <span className="text-white">AMAZING</span>
                         <span className="text-[#C9A35D]">SOLUTION</span>
                         <span className="text-[#C9A35D]">&</span>
