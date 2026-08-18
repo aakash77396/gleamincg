@@ -14,3 +14,25 @@ body {
 * {
   box-sizing: border-box;
 }
+
+@layer components {
+  .admin-label {
+    @apply block text-sm text-gray-400 mb-2;
+  }
+
+  .admin-input {
+    @apply w-full bg-[#0D0D0D] border border-[#303030] rounded-lg px-4 py-3 text-white outline-none transition;
+  }
+
+  .admin-input:focus {
+    @apply border-[#C9A35D];
+  }
+
+  .admin-input::placeholder {
+    @apply text-gray-700;
+  }
+
+  .admin-input option {
+    @apply bg-[#171717] text-white;
+  }
+}

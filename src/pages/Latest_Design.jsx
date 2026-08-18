@@ -1,27 +1,57 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { projects } from "../data/projects";
+import API from "../data/api";
 import ProjectCard from "../components/common/ProjectCard";
 import Container from "../components/common/Container";
 
 const Latest_Design = () => {
- const navigate = useNavigate();
-  const [filter, setFilter] = useState("all");
+  const navigate = useNavigate();
 
+  const [projects, setProjects] = useState([]);
+  const [filter, setFilter] = useState("all");
+  const [loading, setLoading] = useState(true);
+
+  // =========================
+  // FETCH PROJECTS
+  // =========================
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await API.get("/api/projects");
+
+        setProjects(response.data);
+      } catch (error) {
+        console.error(
+          "Failed to fetch projects:",
+          error
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  // =========================
+  // FILTER
+  // =========================
   const filteredProjects =
     filter === "all"
       ? projects
-      : projects.filter((item) => item.type === filter);
+      : projects.filter(
+          (item) => item.type === filter
+        );
 
   return (
     <section className="py-10 bg-[#0D0D0D] min-h-screen">
 
       <Container>
 
+        {/* Header */}
         <div className="text-center">
 
-          
           <p className="uppercase tracking-[5px] text-[#C9A35D]">
             Portfolio
           </p>
@@ -38,61 +68,82 @@ const Latest_Design = () => {
         </div>
 
         {/* Filter */}
-
         <div className="flex justify-center gap-5 mt-12">
 
           <button
             onClick={() => setFilter("all")}
-            className={`px-6 py-3 rounded-full ${filter === "all"
+            className={`px-6 py-3 rounded-full ${
+              filter === "all"
                 ? "bg-[#C9A35D] text-black"
-                : "bg-[#1A1A1A]"
-              }`}
+                : "bg-[#1A1A1A] text-white"
+            }`}
           >
             All
           </button>
 
           <button
             onClick={() => setFilter("image")}
-            className={`px-6 py-3 rounded-full ${filter === "image"
+            className={`px-6 py-3 rounded-full ${
+              filter === "image"
                 ? "bg-[#C9A35D] text-black"
-                : "bg-[#1A1A1A]"
-              }`}
+                : "bg-[#1A1A1A] text-white"
+            }`}
           >
             Images
           </button>
 
           <button
             onClick={() => setFilter("video")}
-            className={`px-6 py-3 rounded-full ${filter === "video"
+            className={`px-6 py-3 rounded-full ${
+              filter === "video"
                 ? "bg-[#C9A35D] text-black"
-                : "bg-[#1A1A1A]"
-              }`}
+                : "bg-[#1A1A1A] text-white"
+            }`}
           >
             Videos
           </button>
 
         </div>
 
+        {/* Loading */}
+        {loading && (
+          <div className="text-center py-20 text-gray-500">
+            Loading projects...
+          </div>
+        )}
+
         {/* Grid */}
+        {!loading && filteredProjects.length > 0 && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project._id}
+                project={project}
+              />
+            ))}
 
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-            />
-          ))}
+          </div>
+        )}
 
-        </div>
+        {/* No Projects */}
+        {!loading && filteredProjects.length === 0 && (
+          <div className="text-center py-20 text-gray-500">
+            No projects available.
+          </div>
+        )}
 
-        <div
+        {/* More */}
+        <div className="flex justify-center">
+
+          <button
             onClick={() => navigate("/projects")}
-            className="cursor-pointer text-black mx-3 mt-10 w-40 target-blank text-center bg-amber-300 px-4 py-3 mb-5 rounded-lg font-medium transition-all duration-200 hover:opacity-80"
-            
+            className="cursor-pointer text-black mt-10 w-40 text-center bg-[#C9A35D] px-4 py-3 mb-5 rounded-lg font-medium transition-all duration-200 hover:opacity-80"
           >
             More
-          </div>
+          </button>
+
+        </div>
 
       </Container>
 
