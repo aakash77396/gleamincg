@@ -12,20 +12,30 @@ const Projects = () => {
   const [filter, setFilter] = useState("all");
   const [loading, setLoading] = useState(true);
 
-  // =========================
-  // FETCH PROJECTS
-  // =========================
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         const response = await API.get("/api/projects");
 
-        setProjects(response.data);
+        console.log("PROJECT RESPONSE:", response.data);
+        console.log(
+          "IS ARRAY:",
+          Array.isArray(response.data)
+        );
+
+        setProjects(
+          Array.isArray(response.data)
+            ? response.data
+            : []
+        );
+
       } catch (error) {
         console.error(
           "Failed to fetch projects:",
           error
         );
+
+        setProjects([]);
       } finally {
         setLoading(false);
       }
@@ -34,9 +44,6 @@ const Projects = () => {
     fetchProjects();
   }, []);
 
-  // =========================
-  // FILTER PROJECTS
-  // =========================
   const filteredProjects =
     filter === "all"
       ? projects
@@ -47,7 +54,6 @@ const Projects = () => {
   return (
     <section className="py-10 bg-[#0D0D0D] min-h-screen">
 
-      {/* Home Button */}
       <div
         onClick={() => navigate("/")}
         className="cursor-pointer text-black mx-3 w-fit bg-[#C9A35D] px-4 py-3 mb-5 rounded-lg font-medium transition-all duration-200 hover:opacity-80"
@@ -57,7 +63,6 @@ const Projects = () => {
 
       <Container>
 
-        {/* Header */}
         <div className="text-center">
 
           <p className="uppercase tracking-[5px] text-[#C9A35D]">
@@ -121,25 +126,31 @@ const Projects = () => {
         )}
 
         {/* Projects */}
-        {!loading && filteredProjects.length > 0 && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        {!loading &&
+          Array.isArray(filteredProjects) &&
+          filteredProjects.length > 0 && (
 
-            {filteredProjects.map((project) => (
-              <ProjectCard
-                key={project._id}
-                project={project}
-              />
-            ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
-          </div>
-        )}
+              {filteredProjects.map((project) => (
+                <ProjectCard
+                  key={project._id}
+                  project={project}
+                />
+              ))}
+
+            </div>
+          )}
 
         {/* Empty */}
-        {!loading && filteredProjects.length === 0 && (
-          <div className="text-center py-20 text-gray-500">
-            No projects available.
-          </div>
-        )}
+        {!loading &&
+          Array.isArray(filteredProjects) &&
+          filteredProjects.length === 0 && (
+
+            <div className="text-center py-20 text-gray-500">
+              No projects available.
+            </div>
+          )}
 
       </Container>
 
