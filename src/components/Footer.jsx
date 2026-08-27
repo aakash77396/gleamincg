@@ -167,7 +167,9 @@ const Footer = () => {
                 <FaPhoneAlt className="text-[#C9A35D] shrink-0" />
 
                 <span>
-                  +91 9625586977
+                  <div>+91 9354182732</div>
+                  <div>+91 7011102160</div>
+                  
                 </span>
 
               </div>
