@@ -252,7 +252,7 @@ const Footer = () => {
             Designed & Developed by{" "}
 
             <a
-              href="https://www.instagram.com/_imsky_._/"
+              href="https://www.linkedin.com/in/eraakashkumar/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#C9A35D] hover:underline"
